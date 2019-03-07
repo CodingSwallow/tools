@@ -10,12 +10,12 @@ function Preload (images, o) {
 Preload.prototype.init = function (images) {
     var _this = this;
     var count = 0;
-    images.forEach(function (imgSrc) {
+
+    function load () {
         var img = new Image();
-        img.src = imgSrc;
+        img.src = images[count];
+        _this.currImg = images[count];
         img.onload = function () {
-            count ++;
-            _this.currImg = imgSrc;
             _this.procedure = parseInt((count / _this.len) * 100);
             if (_this.o.progress && typeof _this.o.progress === 'function') {
                 _this.o.progress();
@@ -24,12 +24,18 @@ Preload.prototype.init = function (images) {
                 if (_this.o.finish && typeof _this.o.finish === 'function') {
                     _this.o.finish();
                 }
+            } else {
+                load();
             }
         }
         img.onerror = function () {
             var currError = new Error('cannot load img ' + _this.currImg);
             _this.errorLog.push(currError);
             _this.o.error(currError);
+            load();
         }
-    });
+        count ++;
+    }
+
+    load();
 }
