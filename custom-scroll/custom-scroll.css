@@ -1,0 +1,112 @@
+.scroll-out-h {
+    position: relative;
+    overflow-x: hidden;
+}
+.scroll-out-h .scroll-in {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: -webkit-calc(100% - 10px);
+    height: calc(100% - 10px);
+}
+.scroll-out-h .drag-con {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 3px;
+    width: 100%;
+    height: 10px;
+    background-color: #f0f0f0;
+}
+.scroll-out-h .drag-box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 3px;
+    width: 30px;
+    height: 100%;
+    background-color: darksalmon;
+}
+
+.scroll-out-v {
+    position: relative;
+    overflow-y: hidden;
+}
+.scroll-out-v .scroll-in {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: calc(100% - 10px);
+}
+.scroll-out-v .drag-con {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    border-radius: 3px;
+    width: 10px;
+    height: 100%;
+    background-color: #f0f0f0;
+}
+.scroll-out-v .drag-box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    border-radius: 3px;
+    width: 100%;
+    height: 30px;
+    background-color: darksalmon;
+}
+
+.scroll-out {
+    position: relative;
+    overflow: hidden;
+}
+.scroll-out .scroll-in {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.scroll-out .drag-con-v {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 10px;
+    height: 100%;
+    background-color: #f0f0f0;
+}
+.scroll-out .drag-box-v {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    border-radius: 3px;
+    width: 100%;
+    height: 30px;
+    background-color: darksalmon;
+}
+.scroll-out .drag-con-h {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 10px;
+    height: 10px;
+    width: calc(100% - 10px);
+    background-color: #f0f0f0;
+}
+.scroll-out .drag-box-h {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 3px;
+    width: 30px;
+    height: 100%;
+    background-color: darksalmon;
+}
