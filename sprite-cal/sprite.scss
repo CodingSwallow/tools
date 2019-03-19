@@ -1,0 +1,41 @@
+$sprite_url: 'css_sprites.png';
+@mixin squareSpriteCal($url, $idealWidth, $idealBackgroundSize, $idealBackgroundPosition_X, $idealBackgroundPosition_Y, $factualWidth) {
+    width: $factualWidth + px;
+    height: $factualWidth + px;
+    background-image: url($url);
+    background-position-x: - $idealBackgroundPosition_X * $factualWidth / $idealWidth + px;
+    background-position-y: - $idealBackgroundPosition_Y * $factualWidth / $idealWidth + px;
+    background-size: $factualWidth * $idealBackgroundSize / $idealWidth + px;
+    background-repeat: no-repeat;
+}
+.sprite {
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.sprite-24 {
+    @include squareSpriteCal($sprite_url, 72, 276, 194, 10, 24);
+}
+.sprite-36 {
+    @include squareSpriteCal($sprite_url, 72, 276, 194, 10, 36);
+}
+.sprite-48 {
+    @include squareSpriteCal($sprite_url, 72, 276, 194, 10, 48);
+}
+.sprite-60 {
+    @include squareSpriteCal($sprite_url, 72, 276, 194, 10, 60);
+}
+.sprite-72 {
+    @include squareSpriteCal($sprite_url, 72, 276, 194, 10, 72);
+}
+.sprite-84 {
+    @include squareSpriteCal($sprite_url, 72, 276, 194, 10, 84);
+}
+.sprite-96 {
+    @include squareSpriteCal($sprite_url, 72, 276, 194, 10, 96);
+}
+.sprite-108 {
+    @include squareSpriteCal($sprite_url, 72, 276, 194, 10, 108);
+}
+
+
