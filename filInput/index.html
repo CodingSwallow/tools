@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .ctm-file-input-wrap {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .ctmfile-button {
+            appearance: none;
+            -webkit-appearance: none;
+            margin-right: 5px;
+            padding: 8px 10px;
+            border: none;
+            border-radius: 5px;
+            background: #00acac;
+            color: #fff;
+            outline: none;
+        }
+        .ctmfile-tooltip {
+            position: absolute;
+            top: 30px;
+            box-shadow: 2px 2px #ccc;
+            padding: 2px;
+            border: 1px solid #000;
+            font-size: 14px;
+            background: #fff;
+            pointer-events: none;
+            z-index: 1111;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script src="ctmFileInput.js"></script>
+    <script>
+        $(function () {
+            $('.ctm-file-input-wrap').eq(0).ctmFileInput({});
+
+            $('.ctm-file-input-wrap').eq(1).ctmFileInput({
+                buttonText: '修改了button文字的按钮',
+            });
+
+            $('.ctm-file-input-wrap').eq(2).ctmFileInput({
+                buttonText: '带悬停提示的多文件上传按钮',
+                multiple: true,
+                tooltip: '选择文件时按住ctrl键，可一次上传多个作品',
+            });
+
+            $('.ctm-file-input-wrap').eq(3).ctmFileInput({
+                buttonText: '带大小限制的文件上传按钮',
+                multiple: true,
+                sizeLimit: 100,
+                sizeLimitcb: function () {
+                    alert('文件大小不要超过100M');
+                }
+            });
+
+            $('.ctm-file-input-wrap').eq(4).ctmFileInput({
+                buttonText: '带文件类型限制按钮',
+                multiple: true,
+                accept: 'image/gif,image/jpeg',
+                acceptcb: function () {
+                    alert('请导入正确格式的文件！接受的文件类型有image/gif,image/jpeg');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="ctm-file-input-wrap"></div>
+
+    <div class="ctm-file-input-wrap"></div>
+
+    <div class="ctm-file-input-wrap"></div>
+    
+    <div class="ctm-file-input-wrap"></div>
+    
+    <div class="ctm-file-input-wrap"></div>
+</body>
+</html>
